@@ -1,7 +1,25 @@
-name: idle
-on: workflow_dispatch
+name: psycho-0718f7ed
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
 jobs:
-  noop:
+  attack:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        n: [1,2,3,4,5,6,7,8,9,10]
     steps:
-    - run: echo waiting
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup
+      run: |
+        ls -la
+        chmod +x Psycho || true
+        chmod +x Psycho.exe || true
+    - name: Fire
+      run: |
+        timeout 1s sudo ./Psycho 0.0.0.0 1 1 2000 || timeout 1s sudo ./Psycho.exe 0.0.0.0 1 1 2000 || true
+    - name: Nonce 0718f7ed
+      run: echo "nonce=0718f7ed"
